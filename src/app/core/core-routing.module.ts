@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {LayoutComponent} from './containers/layout/layout.component';
+import {HomeComponent} from './containers/home/home.component';
 
 
 const routes: Routes = [
-  {path: 'agenda', loadChildren: () => import('../agenda/agenda.module').then(mod => mod.AgendaModule)}
+  {path: '', pathMatch: 'full', redirectTo: 'layout'},
+  {path: 'layout', component: LayoutComponent, children: [
+      {path: '', pathMatch: 'full', redirectTo: 'home'},
+      {path: 'home', component: HomeComponent},
+      {path: 'agenda', loadChildren: () => import('../agenda/agenda.module').then(mod => mod.AgendaModule)}
+    ]
+  },
 ];
 
 @NgModule({

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {AgendaListComponent} from './containers/agenda-list/agenda-list.component';
-import {AgendaDetailComponent} from './containers/agenda-detail/agenda-detail.component';
+import {EventoListComponent} from './components/evento-list/evento-list.component';
+import {EventoDetailComponent} from './components/evento-detail/evento-detail.component';
 
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'list'},
-  {path: 'list', component: AgendaListComponent},
-  {path: 'detail', component: AgendaDetailComponent}
+  {path: 'agenda', component: EventoListComponent},
+  {path: 'evento', component: EventoDetailComponent}
 ];
 
 @NgModule({
