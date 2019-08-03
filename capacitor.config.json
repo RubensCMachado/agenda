@@ -1,0 +1,11 @@
+{
+  "appId": "com.odahcam.agenda",
+  "appName": "Agenda",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "server": {
+    "url": "http://10.136.74.21:4200",
+    "hostname": "app"
+  }
+}
