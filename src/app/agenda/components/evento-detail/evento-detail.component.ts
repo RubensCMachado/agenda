@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Evento} from '../../model/evento.model';
+import {selectEvento, unselectEvento, updateEvento} from '../../store/actions/eventos.actions';
+import {Action} from '@ngrx/store';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-evento-detail',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventoDetailComponent implements OnInit {
 
-  constructor() { }
+  eventoForm = this.fb.group( {
+    id: [''],
+    descricao: [''],
+  });
+
+  @Input()
+  set evento(evento: Evento) {
+    this.eventoForm.patchValue(evento);
+  }
+
+  @Output()
+  actionEmiter = new EventEmitter<Action>();
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
   }
 
+  unselect() {
+    this.actionEmiter.emit(unselectEvento());
+  }
+
+  update() {
+    this.actionEmiter.emit(updateEvento({evento: this.eventoForm.value}));
+  }
 }

@@ -1,5 +1,5 @@
 <mat-list>
-  <mat-list-item routerLink="../evento">Reuniao 10</mat-list-item>
-  <mat-list-item routerLink="../evento">Reuniao 11</mat-list-item>
-  <mat-list-item routerLink="../evento">Almoço</mat-list-item>
+  <mat-list-item *ngFor="let evento of eventos" (click)="select(evento)" routerLink="../evento">
+    {{evento.descricao}}
+  </mat-list-item>
 </mat-list>

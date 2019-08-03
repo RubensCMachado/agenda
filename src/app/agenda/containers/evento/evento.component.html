@@ -1,1 +1,1 @@
-<app-evento-detail></app-evento-detail>
+<app-evento-detail [evento]="evento$ | async" (actionEmiter)="dispatch($event)" ></app-evento-detail>

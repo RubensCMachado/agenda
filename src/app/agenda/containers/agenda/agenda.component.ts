@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {AgendaState} from '../../store/reducers/global.reducer';
+import {Observable} from 'rxjs';
+import {Evento} from '../../model/evento.model';
+import {getAllEventos} from '../../store/selectors/eventos.selectors';
+import {Store, select, Action} from '@ngrx/store';
 
 @Component({
   selector: 'app-agenda',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendaComponent implements OnInit {
 
-  constructor() { }
+  eventos$: Observable<Evento[]>;
+
+  constructor(private store: Store<AgendaState>) { }
 
   ngOnInit() {
+    this.eventos$ = this.store.pipe(select(getAllEventos));
+  }
+
+  dispatch(action: Action) {
+    this.store.dispatch(action);
   }
 
 }
