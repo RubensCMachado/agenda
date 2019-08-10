@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Evento} from '../../model/evento.model';
 import {Action, select, Store} from '@ngrx/store';
-import {AgendaState} from '../../store/reducers/global.reducer';
+import {AgendaState} from '../../store/reducers/feature.reducers';
 import {getAllEventos, getSelectedEvento} from '../../store/selectors/eventos.selectors';
 
 @Component({

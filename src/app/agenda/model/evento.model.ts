@@ -1,6 +1,7 @@
 export interface Evento {
-  id: number;
+  id: string;
+  titulo: string;
   descricao: string;
-  // data
-  // finalizado
+  // data: string;
+  // finalizado: boolean;
 }

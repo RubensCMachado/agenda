@@ -1,5 +1,5 @@
 import {createSelector} from '@ngrx/store';
-import {getAgendaState} from '../reducers/global.reducer';
+import {getAgendaState} from '../reducers/feature.reducers';
 import {eventoAdapter} from '../reducers/eventos.reducer';
 
 export const getEventosState = createSelector(

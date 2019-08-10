@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AgendaState} from '../../store/reducers/global.reducer';
+import {AgendaState} from '../../store/reducers/feature.reducers';
 import {Observable} from 'rxjs';
 import {Evento} from '../../model/evento.model';
 import {getAllEventos} from '../../store/selectors/eventos.selectors';

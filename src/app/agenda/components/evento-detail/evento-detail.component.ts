@@ -13,12 +13,15 @@ export class EventoDetailComponent implements OnInit {
 
   eventoForm = this.fb.group( {
     id: [''],
+    titulo: [''],
     descricao: [''],
   });
 
   @Input()
   set evento(evento: Evento) {
-    this.eventoForm.patchValue(evento);
+    if (evento) {
+      this.eventoForm.patchValue(evento);
+    }
   }
 
   @Output()

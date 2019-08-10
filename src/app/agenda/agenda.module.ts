@@ -8,7 +8,9 @@ import { EventoListComponent } from './components/evento-list/evento-list.compon
 import { EventoDetailComponent } from './components/evento-detail/evento-detail.component';
 import {SharedModule} from '../core/shared/shared.module';
 import {StoreModule} from '@ngrx/store';
-import {agendaReducer} from './store/reducers/global.reducer';
+import {agendaReducer} from './store/reducers/feature.reducers';
+import {EffectsModule} from '@ngrx/effects';
+import {EventosEffects} from './store/effects/eventos.effects';
 
 @NgModule({
   declarations: [ AgendaComponent, EventoComponent, EventoListComponent, EventoDetailComponent],
@@ -17,6 +19,7 @@ import {agendaReducer} from './store/reducers/global.reducer';
     AgendaRoutingModule,
     SharedModule,
     StoreModule.forFeature('agenda', agendaReducer),
+    EffectsModule.forFeature([EventosEffects]),
   ]
 })
 export class AgendaModule { }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "minha-agenda-eventos": {
+      "hosting": {
+        "agenda": [
+          "minha-agenda-eventos"
+        ]
+      }
+    }
+  }
+}
