@@ -1,13 +1,18 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Evento} from '../../model/evento.model';
-import {selectEvento, unselectEvento, updateEvento} from '../../store/actions/eventos.actions';
+import {
+  createEvento,
+  deleteEvento,
+  unselectEvento,
+  updateEvento
+} from '../../store/actions/eventos.actions';
 import {Action} from '@ngrx/store';
 import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-evento-detail',
   templateUrl: './evento-detail.component.html',
-  styleUrls: ['./evento-detail.component.scss']
+  styleUrls: ['./evento-detail.component.scss'],
 })
 export class EventoDetailComponent implements OnInit {
 
@@ -15,6 +20,7 @@ export class EventoDetailComponent implements OnInit {
     id: [''],
     titulo: [''],
     descricao: [''],
+    finalizado: false,
   });
 
   @Input()
@@ -37,7 +43,15 @@ export class EventoDetailComponent implements OnInit {
     this.actionEmiter.emit(unselectEvento());
   }
 
-  update() {
-    this.actionEmiter.emit(updateEvento({evento: this.eventoForm.value}));
+  gravar() {
+    if (this.eventoForm.get('id') && this.eventoForm.get('id').value !== '') {
+      this.actionEmiter.emit(updateEvento({evento: this.eventoForm.value}));
+    } else {
+       this.actionEmiter.emit(createEvento({evento: this.eventoForm.value}));
+    }
+  }
+
+  delete() {
+    this.actionEmiter.emit(deleteEvento({id: this.eventoForm.get('id').value}));
   }
 }

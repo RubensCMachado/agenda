@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {Evento} from '../../model/evento.model';
 import {Action, select, Store} from '@ngrx/store';
 import {AgendaState} from '../../store/reducers/feature.reducers';
-import {getAllEventos, getSelectedEvento} from '../../store/selectors/eventos.selectors';
+import {getSelectedEvento} from '../../store/selectors/eventos.selectors';
 
 @Component({
   selector: 'app-evento',

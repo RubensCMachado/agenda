@@ -1,23 +1,31 @@
 <form [formGroup]="eventoForm">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>{{eventoForm.value?.titulo}}</mat-card-title>
+      <mat-card-title>
+        <label *ngIf="eventoForm.get('id').value">Editar Evento</label>
+        <label *ngIf="!eventoForm.get('id').value">Novo Evento</label>
+      </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Evento titulo" formControlName="titulo">
+      <mat-form-field>
+        <input matInput placeholder="titulo(obrigatório)" formControlName="titulo" required>
       </mat-form-field>
     </mat-card-content>
     <mat-card-content>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Evento descricao" formControlName="descricao">
+      <mat-form-field>
+        <textarea matInput placeholder="descricao" formControlName="descricao"></textarea>
       </mat-form-field>
     </mat-card-content>
+    <mat-card-content>
+        <mat-slide-toggle formControlName="finalizado">Finalizado</mat-slide-toggle>
+    </mat-card-content>
     <mat-card-actions>
-      <button mat-button (click)="update()">salvar</button>
-      <button mat-button routerLink="../agenda" (click)="unselect()">voltar</button>
+      <button mat-flat-button [disabled]="eventoForm.invalid" (click)="!eventoForm.invalid && gravar()" color="primary" >salvar</button>&nbsp;
+      <button mat-flat-button *ngIf="eventoForm.get('id').value" (click)="delete()" color="primary">Excluir</button>&nbsp;
+      <button mat-flat-button routerLink="../agenda" (click)="unselect()" color="primary" >voltar</button>
     </mat-card-actions>
   </mat-card>
 </form>
+
 
 
