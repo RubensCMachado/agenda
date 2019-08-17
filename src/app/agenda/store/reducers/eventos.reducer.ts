@@ -24,12 +24,10 @@ const reducer = createReducer(
   initialState,
   on(updateEventosList, (state, {eventos}) => eventoAdapter.addAll(eventos, state)),
   on(selectEvento, (state, {evento}) => ({...state, evento})),
-  on(unselectEvento, updateEvento, (state: EventosState) => {
+  on(unselectEvento, updateEvento, createEvento, deleteEvento, (state: EventosState) => {
     const {evento, ...rest} = state;
     return rest;
-  }),
-  on(createEvento, (state, {evento}) => eventoAdapter.addOne(evento, state)),
-  on(deleteEvento, (state, {id}) => eventoAdapter.removeOne(id, state)),
+  })
 );
 
 export function reducerEventos(state: EventosState, action: Action) {

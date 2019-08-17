@@ -53,9 +53,10 @@ export class EventosEffects {
 
   createEvento$ = createEffect(() => this.action$.pipe(
     ofType(createEvento),
-    exhaustMap((action) =>
-      from(this.firestore.doc(`eventos/${this.createId()}`).set({
-        id: this.novoId,
+    exhaustMap((action) => {
+      const novoId = this.firestore.createId();
+      return from(this.firestore.doc(`eventos/${novoId}`).set({
+        id: novoId,
         titulo: action.evento.titulo,
         descricao: action.evento.descricao,
         finalizado: action.evento.finalizado}
@@ -69,17 +70,11 @@ export class EventosEffects {
             duration: 5000
           }
         })))
-      )
-    ),
+      );
+    }),
   ));
 
   constructor(private action$: Actions, private firestore: AngularFirestore) {
-  }
-
-  novoId: string;
-  private createId() {
-    this.novoId = this.firestore.createId();
-    return this.novoId;
   }
 
 }

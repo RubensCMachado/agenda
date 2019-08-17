@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {AgendaComponent} from './containers/agenda/agenda.component';
 import {EventoComponent} from './containers/evento/evento.component';
-
+import {redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'agenda'},

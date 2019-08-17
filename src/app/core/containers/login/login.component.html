@@ -1,0 +1,48 @@
+<form [formGroup]="loginForm">
+  <div class="container" fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex="0 1 400px">
+      <mat-card-header>
+        <mat-card-title>
+          Login
+        </mat-card-title>
+        <mat-card-subtitle>
+            Informe suas credenciais ou use sua conta Google.
+        </mat-card-subtitle>
+      </mat-card-header>
+      <div fxLayout="column" fxLayoutAlign="start stretch">
+        <mat-card-content>
+            <mat-form-field>
+              <input matInput placeholder="E-mail" formControlName="email">
+              <mat-icon matPrefix>email</mat-icon>
+              <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+                Informe um E-mail valido!
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                Informe seu E-mail!
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+          <mat-card-content>
+            <mat-form-field>
+              <input matInput type="Password" placeholder="Senha" formControlName="senha">
+              <mat-icon matPrefix>vpn_key</mat-icon>
+              <mat-error *ngIf="loginForm.get('senha').hasError('minlength') && !loginForm.get('senha').hasError('senha')">
+                A senha deve conter, no mínimo, 8 caracteres
+              </mat-error>
+              <mat-error *ngIf="loginForm.get('senha').hasError('required')">
+                Informe sua senha!
+              </mat-error>
+            </mat-form-field>
+        </mat-card-content>
+        <div fxLayout="column" fxLayoutAlign="center">
+          <button mat-raised-button type="button" (click)="google()"><img src="../../../../assets/google.png" height="24" width="24"/> Sign in with Google</button>
+        </div>
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-raised-button type="Submit" (click)="login()"><mat-icon>send</mat-icon> Sign in </button>&nbsp;
+          <button mat-raised-button type="button"><mat-icon>person_add</mat-icon> Sign up </button>&nbsp;
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+</form>
+

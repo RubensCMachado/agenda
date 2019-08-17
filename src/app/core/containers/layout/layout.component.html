@@ -8,6 +8,14 @@
         <mat-icon>event</mat-icon>Agenda
       </mat-list-item>
     </mat-list>
+    <mat-list-item (click)="logout(); sidenav.close()" *ngIf="isAuthenticated$ | async else login ">
+      <mat-icon>exit_to_app</mat-icon>Logout
+    </mat-list-item>
+    <ng-template #login>
+      <mat-list-item routerLink="/core/layout/login" (click)="sidenav.close()">
+        <mat-icon>person</mat-icon>Login
+      </mat-list-item>
+    </ng-template>
   </mat-sidenav>
   <mat-sidenav-content fxFlexFill>
     <mat-toolbar color="primary">

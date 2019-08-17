@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {CoreState} from '../../store/reducers/feature.reducers';
+import {select, Store} from '@ngrx/store';
+import {Observable} from 'rxjs';
+import {signOut} from '../../store/actions/auth.actions';
+import {isAuthenticated} from '../../store/selectors/auth.selectors';
 
 @Component({
   selector: 'app-layout',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  isAuthenticated$: Observable<boolean>;
 
-  ngOnInit() {
+  constructor(private store: Store<CoreState> ) {
   }
 
+  ngOnInit() {
+    this.isAuthenticated$ = this.store.pipe(select(isAuthenticated));
+  }
+
+  logout() {
+    this.store.dispatch(signOut());
+  }
 }

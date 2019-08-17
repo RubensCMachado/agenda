@@ -1,0 +1,79 @@
+[debug] [2019-08-17T17:39:16.020Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T17:39:16.022Z] Command:       C:\Program Files\nodejs\node.exe C:\rucm\Agenda\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-17T17:39:16.022Z] CLI Version:   6.12.0
+[debug] [2019-08-17T17:39:16.022Z] Platform:      win32
+[debug] [2019-08-17T17:39:16.022Z] Node Version:  v10.15.3
+[debug] [2019-08-17T17:39:16.025Z] Time:          Sat Aug 17 2019 14:39:16 GMT-0300 (GMT-03:00)
+[debug] [2019-08-17T17:39:16.025Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-17T17:39:16.036Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-17T17:39:16.037Z] > authorizing via signed-in user
+[debug] [2019-08-17T17:39:16.037Z] [iam] checking project minha-agenda-eventos for permissions ["firebase.projects.get"]
+[debug] [2019-08-17T17:39:16.038Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-17T17:39:16.039Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-17T17:39:16.240Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-17T17:39:16.271Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos:testIamPermissions  
+
+[debug] [2019-08-17T17:39:17.226Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-17T17:39:17.228Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos  
+ 
+[debug] [2019-08-17T17:39:18.133Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\rucm\Agenda'...
+[info] 
+[debug] [2019-08-17T17:39:18.137Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/677544430617/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-17T17:39:18.772Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: www
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-17T17:47:18.512Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T17:47:18.517Z] Command:       C:\Program Files\nodejs\node.exe C:\rucm\Agenda\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-17T17:47:18.517Z] CLI Version:   6.12.0
+[debug] [2019-08-17T17:47:18.517Z] Platform:      win32
+[debug] [2019-08-17T17:47:18.517Z] Node Version:  v10.15.3
+[debug] [2019-08-17T17:47:18.522Z] Time:          Sat Aug 17 2019 14:47:18 GMT-0300 (GMT-03:00)
+[debug] [2019-08-17T17:47:18.522Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-17T17:47:18.578Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-17T17:47:18.580Z] > authorizing via signed-in user
+[debug] [2019-08-17T17:47:18.580Z] [iam] checking project minha-agenda-eventos for permissions ["firebase.projects.get"]
+[debug] [2019-08-17T17:47:18.583Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos:testIamPermissions  
+
+[debug] [2019-08-17T17:47:19.592Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-17T17:47:19.596Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos  
+ 
+[debug] [2019-08-17T17:47:20.498Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\rucm\Agenda'...
+[info] 
+[debug] [2019-08-17T17:47:20.502Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/677544430617/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-17T17:47:21.725Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: www
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-08-17T17:59:23.401Z] ----------------------------------------------------------------------
+[debug] [2019-08-17T17:59:23.404Z] Command:       C:\Program Files\nodejs\node.exe C:\rucm\Agenda\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-08-17T17:59:23.405Z] CLI Version:   6.12.0
+[debug] [2019-08-17T17:59:23.405Z] Platform:      win32
+[debug] [2019-08-17T17:59:23.405Z] Node Version:  v10.15.3
+[debug] [2019-08-17T17:59:23.408Z] Time:          Sat Aug 17 2019 14:59:23 GMT-0300 (GMT-03:00)
+[debug] [2019-08-17T17:59:23.408Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-17T17:59:23.428Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-17T17:59:23.428Z] > authorizing via signed-in user
+[debug] [2019-08-17T17:59:23.429Z] [iam] checking project minha-agenda-eventos for permissions ["firebase.projects.get"]
+[debug] [2019-08-17T17:59:23.432Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos:testIamPermissions  
+
+[debug] [2019-08-17T17:59:24.457Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-17T17:59:24.461Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/minha-agenda-eventos  
+ 
+[debug] [2019-08-17T17:59:25.367Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\rucm\Agenda'...
+[info] 
+[debug] [2019-08-17T17:59:25.372Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/677544430617/clients/_:getWebAppConfig  
+ 
+[debug] [2019-08-17T17:59:26.672Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: www
+[info] +  hosting: Local server: http://localhost:5000
